@@ -54,6 +54,10 @@ kubectl rollout history deployment/abc --revision=3 -   View the details of depl
 kubectl rollout undo deployment/<deployment-name> –to-revision=<revision-number>	- Rollback a deployment to a specific revision.
 kubectl delete deployment <deployment-name> - Delete deployment 
 kubectl edit deployment <deployment_name> – Edit and update deployment
+kubectl logs <pod-name> - to check the logs of a pod
+kubectl logs <pod-name> -c <container-name> - to check the logs of multiple container running inside a pod
+
+
 
 
 

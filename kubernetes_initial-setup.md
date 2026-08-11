@@ -1,3 +1,20 @@
+### Configure AWS Credentials using aws configure command :
+
+```
+aws configure
+```
+```
+AWS Access Key ID [None]: XXXXXXXXXXXXXXXXXXXXXX
+```
+```
+AWS Secret Access Key [None]: XXXXXXXXXXXXXXXXXXXXXX
+```
+```
+Default region name [None]: region-code
+```
+```
+Default output format [None]:
+```
 # Steps for initial setup on Bastion host for deploying applications on EKS cluster
 
 ### Install kubectl CLI tool on EC2:
@@ -19,6 +36,12 @@ echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 ```
 ```
 kubectl version --client
+```
+
+### Update the cluster information in kubeconfig file on EC2:
+
+```
+aws eks update-kubeconfig --name cluster-name  --region region-code
 ```
 
 ### Install  AWS CLI tool on EC2 :
@@ -51,29 +74,7 @@ tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz
 sudo mv /tmp/eksctl /usr/local/bin
 ```
 
-### Configure AWS Credentials using aws configure command :
 
-```
-aws configure
-```
-```
-AWS Access Key ID [None]: XXXXXXXXXXXXXXXXXXXXXX
-```
-```
-AWS Secret Access Key [None]: XXXXXXXXXXXXXXXXXXXXXX
-```
-```
-Default region name [None]: region-code
-```
-```
-Default output format [None]:
-```
-
-### Update the cluster information in kubeconfig file on EC2:
-
-```
-aws eks update-kubeconfig --name cluster-name  --region region-code
-```
 
 ### To check the list of configured kubernetes clusters run the below command:
 

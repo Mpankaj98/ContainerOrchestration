@@ -1,4 +1,4 @@
-### Configure AWS Credentials using aws configure command :
+### Step 1 : Configure AWS Credentials using aws configure command :
 
 ```
 aws configure
@@ -15,7 +15,7 @@ Default region name [None]: region-code
 ```
 Default output format [None]:
 ```
-# Steps for initial setup on Bastion host for deploying applications on EKS cluster
+# Step 2 : Steps for initial setup on Bastion host for deploying applications on EKS cluster
 
 ### Install kubectl CLI tool on EC2:
 
@@ -38,7 +38,7 @@ echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 kubectl version --client
 ```
 
-### Update the cluster information in kubeconfig file on EC2:
+### Step 3 : Update the cluster information in kubeconfig file on EC2:
 
 ```
 aws eks update-kubeconfig --name cluster-name  --region region-code
